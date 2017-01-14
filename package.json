@@ -1,0 +1,33 @@
+{
+  "name": "camper-leaderboard",
+  "version": "1.0.0",
+  "description": "Camper Leaderboard app for freeCodeCamp",
+  "main": "index.tsx",
+  "scripts": {
+    "watch": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "camper-leaderboard"
+  },
+  "keywords": [
+    "fcc",
+    "camper_leaderboard",
+    "react",
+    "tsx"
+  ],
+  "author": "r3b311i0n",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^15.0.0",
+    "@types/react-dom": "^0.14.20",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "source-map-loader": "^0.1.6",
+    "typescript": "^2.1.5",
+    "webpack": "^1.14.0"
+  }
+}

@@ -1,0 +1,9 @@
+.App {
+    display: flex;
+    display: -moz-box;
+}
+
+.Title {
+    align-self: center;
+    color: blue;
+}

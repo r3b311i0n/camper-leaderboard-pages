@@ -1,9 +1,45 @@
-.App {
+main div {
     display: flex;
-    display: -moz-box;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+table {
+    table-layout: auto;
+    border: thin solid black;
+}
+
+th {
+    border: thin solid black;
+    margin: 100%;
+    padding: 0 5rem;
 }
 
 .Title {
-    align-self: center;
-    color: blue;
+    text-align: center;
+    width: 100%;
+    color: #006400;
+}
+
+.Credits {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 14px;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

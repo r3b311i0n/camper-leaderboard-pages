@@ -4,7 +4,8 @@
   "description": "Camper Leaderboard app for freeCodeCamp",
   "main": "index.tsx",
   "scripts": {
-    "watch": "webpack-dev-server"
+    "watch": "node_modules/.bin/webpack-dev-server",
+    "webpack": "node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",

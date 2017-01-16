@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import Camper from './Camper';
 import './App.css';
 
 export class App extends React.Component<undefined, undefined> {

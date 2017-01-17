@@ -22,8 +22,10 @@
   "dependencies": {
     "@types/react": "^15.0.0",
     "@types/react-dom": "^0.14.20",
+    "@types/whatwg-fetch": "0.0.33",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.0.0-beta.18",

@@ -1,11 +1,39 @@
 import * as React from 'react';
+import 'whatwg-fetch';
 
-import Camper from './Camper';
 import './App.css';
 
-export class App extends React.Component<undefined, undefined> {
-    constructor() {
-        super();
+export class App extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            "recentArray": [],
+            "alltimeArray": []
+        };
+
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent", 0);
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/alltime", 1);
+    };
+
+    //todo: implement lifecycle hooks for smooth api response handling
+
+    fetchArray(url: string, stateKey: number): void {
+        fetch(url, {
+            "method": "GET",
+            "mode": "cors",
+            "headers": new Headers({
+                "Content-Type": "application/json"
+            })
+        }).then((response: any) => {
+            return response.json();
+        }).then((res: any) => {
+            if (stateKey === 0) {
+                this.setState({recentArray: res});
+            } else {
+                this.setState(({alltimeArray: res}));
+            }
+        });
     }
 
     render() {
@@ -23,6 +51,13 @@ export class App extends React.Component<undefined, undefined> {
                             </tr>
                             </thead>
                             <tbody>
+                            {this.state.recentArray.map((camper: any) => {
+                                return (<tr className="camper" key={camper["username"]}>
+                                    <td>{camper["username"]}</td>
+                                    <td>{camper["recent"]}</td>
+                                    <td>{camper["alltime"]}</td>
+                                </tr>);
+                            })}
                             </tbody>
                         </table>
                     </div>

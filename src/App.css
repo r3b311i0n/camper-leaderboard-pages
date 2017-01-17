@@ -1,3 +1,11 @@
+main div {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+}
+
 table {
     table-layout: auto;
     border: thin solid black;
@@ -15,8 +23,12 @@ th {
     color: #006400;
 }
 
+.camper {
+    text-align: center;
+}
+
 .Credits {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     text-align: center;

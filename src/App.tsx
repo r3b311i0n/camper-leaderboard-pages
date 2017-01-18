@@ -8,15 +8,12 @@ export class App extends React.Component<any, any> {
         super(props);
 
         this.state = {
-            "recentArray": [],
-            "alltimeArray": []
+            "camperArray": [],
         };
     };
 
-    //todo: implement lifecycle hooks for smooth api response handling
-
-    fetchArray(url: string, stateKey: number): void {
-        fetch(url, {
+    fetchArray(url: string): any {
+        return fetch(url, {
             "method": "GET",
             "mode": "cors",
             "headers": new Headers({
@@ -25,18 +22,19 @@ export class App extends React.Component<any, any> {
         }).then((response: any) => {
             return response.json();
         }).then((res: any) => {
-            if (stateKey === 0) {
-                this.setState({recentArray: res});
-            } else {
-                this.setState(({alltimeArray: res}));
-            }
+            this.setState({camperArray: res});
+            return res;
         });
     }
 
     componentDidMount() {
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent", 0);
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/alltime", 1);
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent").then((res: any) => {
+            console.log(res);
+        });
+        // this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/allTime");
     }
+
+    //todo: initialise camper component and set array prop
 
     render() {
         return (
@@ -53,7 +51,7 @@ export class App extends React.Component<any, any> {
                             </tr>
                             </thead>
                             <tbody>
-                            {this.state.recentArray.map((camper: any) => {
+                            {this.state.camperArray.map((camper: any) => {
                                 return (<tr className="Camper" key={camper["username"]}>
                                     <td><img src={camper["img"]} alt="portrait"
                                              className="CamperPic"/>{camper["username"]}</td>

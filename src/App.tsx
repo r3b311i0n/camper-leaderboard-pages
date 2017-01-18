@@ -11,9 +11,6 @@ export class App extends React.Component<any, any> {
             "recentArray": [],
             "alltimeArray": []
         };
-
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent", 0);
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/alltime", 1);
     };
 
     //todo: implement lifecycle hooks for smooth api response handling
@@ -36,6 +33,11 @@ export class App extends React.Component<any, any> {
         });
     }
 
+    componentDidMount() {
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent", 0);
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/alltime", 1);
+    }
+
     render() {
         return (
             <div className="App">
@@ -52,10 +54,11 @@ export class App extends React.Component<any, any> {
                             </thead>
                             <tbody>
                             {this.state.recentArray.map((camper: any) => {
-                                return (<tr className="camper" key={camper["username"]}>
-                                    <td>{camper["username"]}</td>
-                                    <td>{camper["recent"]}</td>
-                                    <td>{camper["alltime"]}</td>
+                                return (<tr className="Camper" key={camper["username"]}>
+                                    <td><img src={camper["img"]} alt="portrait"
+                                             className="CamperPic"/>{camper["username"]}</td>
+                                    <td className="TextCenter">{camper["recent"]}</td>
+                                    <td className="TextCenter">{camper["alltime"]}</td>
                                 </tr>);
                             })}
                             </tbody>

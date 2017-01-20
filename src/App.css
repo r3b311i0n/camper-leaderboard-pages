@@ -6,6 +6,7 @@ main div {
     align-items: flex-start;
 }
 
+/*todo: give fixed width to table*/
 table {
     table-layout: auto;
     border: thin solid white;

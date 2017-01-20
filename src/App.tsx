@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import {Camper} from './Camper';
 import './App.css';
 
-export class App extends React.Component<null, {camperArray: any}> {
+export class App extends React.Component<null, {camperArray: Object}> {
     constructor(props: any) {
         super(props);
 
@@ -13,7 +13,7 @@ export class App extends React.Component<null, {camperArray: any}> {
         };
     };
 
-    fetchArray(url: string): any {
+    fetchArray(url: string): Promise<Object> {
         return fetch(url, {
             "method": "GET",
             "mode": "cors",
@@ -29,15 +29,21 @@ export class App extends React.Component<null, {camperArray: any}> {
     }
 
     componentDidMount() {
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent");
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent").catch((err) => {
+            console.log(err);
+        });
     }
 
     handleRecent = (): any => {
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent");
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent").catch((err) => {
+            console.log(err);
+        });
     };
 
     handleAllTime = (): any => {
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/allTime");
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/allTime").catch((err) => {
+            console.log(err);
+        });
     };
 
     public render(): JSX.Element {

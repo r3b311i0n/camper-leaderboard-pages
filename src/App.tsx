@@ -1,9 +1,10 @@
 import * as React from 'react';
 import 'whatwg-fetch';
 
+import {Camper} from './Camper';
 import './App.css';
 
-export class App extends React.Component<any, any> {
+export class App extends React.Component<null, {camperArray: any}> {
     constructor(props: any) {
         super(props);
 
@@ -34,9 +35,7 @@ export class App extends React.Component<any, any> {
         // this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/allTime");
     }
 
-    //todo: initialise camper component and set array prop
-
-    render() {
+    public render(): JSX.Element {
         return (
             <div className="App">
                 <header><h1 className="Title">Camper Leaderboard</h1></header>
@@ -50,16 +49,7 @@ export class App extends React.Component<any, any> {
                                 <th>All-Time</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            {this.state.camperArray.map((camper: any) => {
-                                return (<tr className="Camper" key={camper["username"]}>
-                                    <td><img src={camper["img"]} alt="portrait"
-                                             className="CamperPic"/>{camper["username"]}</td>
-                                    <td className="TextCenter">{camper["recent"]}</td>
-                                    <td className="TextCenter">{camper["alltime"]}</td>
-                                </tr>);
-                            })}
-                            </tbody>
+                            <Camper camperArray={this.state.camperArray}/>
                         </table>
                     </div>
                 </main>

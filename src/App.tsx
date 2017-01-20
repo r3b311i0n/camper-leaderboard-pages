@@ -29,11 +29,16 @@ export class App extends React.Component<null, {camperArray: any}> {
     }
 
     componentDidMount() {
-        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent").then((res: any) => {
-            console.log(res);
-        });
-        // this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/allTime");
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent");
     }
+
+    handleRecent = (): any => {
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent");
+    };
+
+    handleAllTime = (): any => {
+        this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/allTime");
+    };
 
     public render(): JSX.Element {
         return (
@@ -45,8 +50,8 @@ export class App extends React.Component<null, {camperArray: any}> {
                             <thead>
                             <tr>
                                 <th>Camper</th>
-                                <th>Last 30 Days</th>
-                                <th>All-Time</th>
+                                <th onClick={this.handleRecent}>Last 30 Days</th>
+                                <th onClick={this.handleAllTime}>All-Time</th>
                             </tr>
                             </thead>
                             <Camper camperArray={this.state.camperArray}/>

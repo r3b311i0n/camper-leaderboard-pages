@@ -4,9 +4,6 @@ body {
     font-family: 'Fira Mono', monospace;
     background-color: darkgreen;
     color: #999;
-}
-
-main div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

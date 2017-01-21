@@ -11,9 +11,9 @@ export class Camper extends React.Component<CamperProps, {}> {
             {this.props.camperArray.map((camper: any) => {
                 return (<tr className="Camper" key={camper["username"]}>
                         <td><img src={camper["img"]} alt="portrait"
-                                 className="CamperPic"/>{camper["username"]}</td>
-                        <td className="TextCenter">{camper["recent"]}</td>
-                        <td className="TextCenter">{camper["alltime"]}</td>
+                                 className="Camper-pic"/>{camper["username"]}</td>
+                        <td className="Text-center">{camper["recent"]}</td>
+                        <td className="Text-center">{camper["alltime"]}</td>
                     </tr>
                 );
             })}

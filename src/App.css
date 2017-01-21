@@ -6,10 +6,10 @@ main div {
     align-items: flex-start;
 }
 
-/*todo: give fixed width to table*/
 table {
     table-layout: auto;
     border: thin solid white;
+    width: 55rem;
 }
 
 th {
@@ -32,13 +32,11 @@ th:nth-child(3):hover {
     background-color: white;
     color: darkgreen;
 }
-/*todo: add fCC logo to heading and animate it.*/
-/*todo: change title font-face to fCC font*/
+
 .Title {
     text-align: center;
     width: 100%;
-    /*color: #006400;*/
-    font-size: 3.5em;
+    font-size: 3.7em;
     cursor: default;
     color: white;
 }

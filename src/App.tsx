@@ -9,7 +9,7 @@ export class App extends React.Component<null, {camperArray: Object}> {
         super(props);
 
         this.state = {
-            "camperArray": [],
+            "camperArray": []
         };
     };
 
@@ -28,7 +28,7 @@ export class App extends React.Component<null, {camperArray: Object}> {
         });
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         this.fetchArray("https://fcctop100.herokuapp.com/api/fccusers/top/recent").catch((err) => {
             console.log(err);
         });
@@ -48,8 +48,10 @@ export class App extends React.Component<null, {camperArray: Object}> {
 
     public render(): JSX.Element {
         return (
-            <div className="App">
-                <header><h1 className="Title">Camper Leaderboard</h1></header>
+            <div>
+                <header>
+                    <h1 className="Title">Camper Leaderboard</h1>
+                </header>
                 <main>
                     <div>
                         <table>

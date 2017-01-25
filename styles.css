@@ -1,3 +1,10 @@
+@media screen and (min-width: 320px) {
+    #root {
+        width: 80rem;
+    }
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -11,15 +18,19 @@ main div {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: row;
-    flex-flow: row;
+        flex-flow: row;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 table {
@@ -86,29 +97,33 @@ th:nth-child(3):hover {
 
 .App-logo {
     -webkit-animation: App-logo-spin infinite 20s linear;
-    animation: App-logo-spin infinite 20s linear;
+            animation: App-logo-spin infinite 20s linear;
     height: 14px;
 }
 
 @-webkit-keyframes App-logo-spin {
     from {
         -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+                transform: rotate(0deg);
     }
     to {
         -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+                transform: rotate(360deg);
     }
 }
 
 @keyframes App-logo-spin {
     from {
         -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+                transform: rotate(0deg);
     }
     to {
         -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+                transform: rotate(360deg);
     }
 }
+<<<<<<< HEAD
 /*# sourceMappingURL=styles.css.map*/
+=======
+/*# sourceMappingURL=styles.css.map*/
+>>>>>>> 0e059e847d60792b2e45e9ca5d58a22f646910e3
